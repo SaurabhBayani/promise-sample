@@ -1,2 +1,4 @@
 # promise-sample
-Sample for promise
+Simple application for promise
+
+Uncomment every section to understand
