@@ -5,14 +5,15 @@ $.getJSON('http://hipsterjesus.com/api/', function(data) {
 
 
 
-//	Using promis returened by $.getJSON
-var promise = $.getJSON('http://hipsterjesus.com/api/');
+//	Using promise returned by $.getJSON
+/*var promise = $.getJSON('http://hipsterjesus.com/api/');
 promise.then(function(data){
 	$('body').append(data.text);
-});
+}); */
 
 
-$.getJSON('http://hipsterjesus.com/api/', function(data) {
+//	Pyramid of doom, Always AVOID it
+/*$.getJSON('http://hipsterjesus.com/api/', function(data) {
 	console.info('Inside First Callback');
   	
   	$.getJSON('http://hipsterjesus.com/api/', function(data) {
@@ -29,12 +30,13 @@ $.getJSON('http://hipsterjesus.com/api/', function(data) {
 	
 	});
 
-});
+});*/
 
 
 
 
-var promise  = $.getJSON('http://hipsterjesus.com/api/');
+//	Promise inside promise (Can also form Pyramid of DOOM)
+/*var promise  = $.getJSON('http://hipsterjesus.com/api/');
 
 promise.then(function(data) {
 	console.info('Inside first promise');
@@ -53,11 +55,12 @@ promise.then(function(data) {
 			});
 		});
 	});
-});
+}); */
 
 
 
-var promise  = $.getJSON('http://hipsterjesus.com/api/');
+//	Promise, By proper way(Chaining)
+/*var promise  = $.getJSON('http://hipsterjesus.com/api/');
 
 promise.then(function (data) {
 	console.info('Inside first promise');
@@ -72,12 +75,12 @@ promise.then(function (data) {
 	console.info('Inside Fourth promise');
 }).catch(function (error) {
 	console.warn('There is some error', error);
-});
+}); */
 
 
 
-
-Promise.all([
+//	When-then(jQuery) like structure for promise
+/*Promise.all([
 	$.getJSON('http://hipsterjesus.com/api/'),
 	$.getJSON('http://hipsterjesus.com/api/'),
 	$.getJSON('http://hipsterjesus.com/api/'),
@@ -91,4 +94,4 @@ Promise.all([
 	console.log(values[2])
 	console.warn('Inside Fourth promise');
 	console.log(values[3])
-})
+})*/
